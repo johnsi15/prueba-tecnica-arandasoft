@@ -1,5 +1,6 @@
 import { Hero } from '@/components/common/hero'
 import { RecipeGrid } from '@/components/recipes/recipe-grid'
+import { Banner } from '@/components/common/banner'
 import styles from './page.module.scss'
 
 const sampleRecipes = [
@@ -14,6 +15,7 @@ export default function Home() {
     <div className={styles.page}>
       <Hero />
       <RecipeGrid recipes={sampleRecipes} />
+      <Banner />
     </div>
   )
 }
