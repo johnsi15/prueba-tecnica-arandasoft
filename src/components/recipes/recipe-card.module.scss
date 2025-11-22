@@ -1,0 +1,84 @@
+.card {
+  background: linear-gradient(to top, var(--color-white), var(--color-light-blue));
+  border-radius: 8px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.21);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+
+  // &:hover {
+  //   transform: translateY(-4px);
+  //   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  // }
+
+  .imageContainer {
+    flex-shrink: 0;
+    position: relative;
+    top: -50px;
+    width: 164px;
+    margin: 0 auto;
+
+    .image {
+      width: 164px;
+      height: 158px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  .content {
+    padding: var(--spacing-md);
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+
+    .name {
+      font-family: var(--font-primary);
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin: 0;
+      span {
+        font-weight: var(--font-weight-regular);
+        font-family: var(--font-secondary);
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .starContainer {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-12);
+        span {
+          color: var(--color-secondary);
+          font-size: var(--font-size-26);
+          font-weight: var(--font-weight-regular);
+        }
+      }
+
+      .icon {
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
