@@ -1,10 +1,11 @@
 .header {
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-blue);
   height: 70px;
   display: flex;
   align-items: center;
   width: 100%;
+  box-shadow: 0px 3px 6px var(--color-blue-gray);
+  background: var(--color-white) 0% 0% no-repeat padding-box;
 
   .container {
     max-width: var(--container-max-width);

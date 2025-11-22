@@ -1,0 +1,37 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+  .image {
+    max-width: var(--container-max-width);
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .text {
+    max-width: max-content;
+    left: 255px;
+    top: 145px;
+    position: absolute;
+    font-size: 40px;
+    width: 100%;
+    h1 {
+      color: var(--color-white);
+      font-size: 74px;
+      font-weight: var(--font-weight-regular);
+    }
+    span {
+      display: block;
+      font-family: var(--font-secondary);
+      color: var(--color-white);
+      position: relative;
+      font-size: 67px;
+      top: -45px;
+      left: 2px;
+    }
+  }
+}

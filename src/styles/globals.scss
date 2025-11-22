@@ -9,6 +9,7 @@
   --color-white: #{$color-white};
   --color-black: #{$color-black};
   --color-gray-blue: #{$color-gray-blue};
+  --color-blue-gray: #{$color-blue-gray};
   --color-text-primary: #{$color-text-primary};
   --color-text-secondary: #{$color-text-secondary};
   --font-primary: #{$font-primary};
@@ -16,6 +17,7 @@
   --font-size-base: #{$font-size-base};
   --font-size-2xl: #{$font-size-2xl};
   --font-size-40: #{$font-size-40};
+  --font-size-7xl: #{$font-size-7xl};
   --font-weight-regular: #{$font-weight-regular};
   --font-weight-medium: #{$font-weight-medium};
   --font-weight-bold: #{$font-weight-bold};
@@ -24,4 +26,5 @@
   --spacing-md: #{$spacing-md};
   --spacing-lg: #{$spacing-lg};
   --container-max-width: #{$container-max-width};
+  --font-weight-regular: #{$font-weight-regular};
 }
