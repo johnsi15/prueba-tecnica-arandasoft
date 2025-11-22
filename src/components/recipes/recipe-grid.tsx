@@ -6,6 +6,9 @@ interface Recipe {
   name: string
   subname: string
   image: string
+  portionSize: string
+  prepTime: string
+  difficulty: string
 }
 
 interface RecipeGridProps {
@@ -18,7 +21,7 @@ export function RecipeGrid({ recipes }: RecipeGridProps) {
       <h2>Nuevas Recetas</h2>
       <div className={styles.grid}>
         {recipes.map(recipe => (
-          <RecipeCard key={recipe.id} name={recipe.name} subname={recipe.subname} image={recipe.image} />
+          <RecipeCard key={recipe.id} name={recipe.name} subname={recipe.subname} image={recipe.image} portionSize={recipe.portionSize} prepTime={recipe.prepTime} difficulty={recipe.difficulty} />
         ))}
       </div>
     </section>
