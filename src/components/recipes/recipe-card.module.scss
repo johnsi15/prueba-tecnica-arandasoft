@@ -1,3 +1,5 @@
+@use '../../styles/abstracts/mixins' as *;
+
 .card {
   background: linear-gradient(to top, var(--color-white), var(--color-light-blue));
   border-radius: 8px;
@@ -7,6 +9,11 @@
   height: 270px;
   display: flex;
   flex-direction: column;
+
+  @include respond-tablet {
+    min-width: 280px;
+    flex-shrink: 0;
+  }
 
   &:hover {
     height: auto;

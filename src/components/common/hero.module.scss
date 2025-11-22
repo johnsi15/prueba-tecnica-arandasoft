@@ -1,3 +1,5 @@
+@use '../../styles/abstracts/mixins' as *;
+
 .hero {
   display: flex;
   justify-content: center;
@@ -33,6 +35,60 @@
       font-size: 67px;
       top: -45px;
       left: 2px;
+    }
+
+    @include respond-tablet {
+      top: 59px;
+      left: 120px;
+    }
+  }
+
+  .categories {
+    display: none;
+
+    li {
+      width: 106px;
+      height: 85px;
+      background: transparent linear-gradient(180deg, #e9f1fa 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+      box-shadow: 0px 5px 9px #8395a766;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-xs);
+      padding: var(--spacing-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 8px 15px #8395a766;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
+      span {
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-medium);
+        color: var(--color-text-secondary);
+        text-align: center;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  @include respond-tablet {
+    .categories {
+      display: flex;
+      gap: var(--spacing-12);
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

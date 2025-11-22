@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './header.module.scss'
 
 export function Header() {
@@ -8,6 +9,9 @@ export function Header() {
         <div className={styles.logo}>
           Recipe <span className={styles['text-app']}>App</span>
         </div>
+        <Link href="/" className={styles.homeIcon}>
+          <Image src="/assets/ic_home.png" alt="Home" width={24} height={24} />
+        </Link>
         <nav className={styles.nav}>
           <ul>
             <li>

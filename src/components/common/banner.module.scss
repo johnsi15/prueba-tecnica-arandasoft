@@ -1,9 +1,15 @@
+@use '../../styles/abstracts/mixins' as *;
+
 .banner {
   background: transparent linear-gradient(180deg, #c2e3f3 0%, #6aa3c1 100%) 0% 0% no-repeat padding-box;
   box-shadow: 4px 6px 23px #a9a9a911;
   height: 167px;
   margin: var(--spacing-7xl) 0;
   width: 100%;
+  @include respond-tablet {
+    height: 116px;
+    margin: var(--spacing-3xl) 0;
+  }
 }
 
 .content {
@@ -27,5 +33,21 @@
     position: absolute;
     right: 0;
     bottom: -38px;
+  }
+
+  @include respond-tablet {
+    padding: 0 var(--spacing-2xl);
+
+    p {
+      font-size: var(--font-size-40);
+      margin: 0;
+    }
+
+    img {
+      position: relative;
+      top: -7px;
+      width: 379px;
+      height: auto;
+    }
   }
 }

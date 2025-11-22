@@ -1,3 +1,5 @@
+@use '../../styles/abstracts/mixins' as *;
+
 .header {
   background-color: var(--color-white);
   height: 70px;
@@ -17,6 +19,25 @@
     align-items: center;
   }
 
+  @include respond-tablet {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .homeIcon {
+    display: none;
+
+    @include respond-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
   .logo {
     font-family: var(--font-secondary);
     font-size: var(--font-size-40);
@@ -33,6 +54,10 @@
   }
 
   .nav {
+    @include respond-tablet {
+      display: none;
+    }
+
     ul {
       list-style: none;
       display: flex;
