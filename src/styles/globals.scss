@@ -1,1 +1,25 @@
-@import './base/reset';
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+
+@use './base/reset';
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-gray-blue: #{$color-gray-blue};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+  --font-size-base: #{$font-size-base};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+  --line-height-normal: #{$line-height-normal};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --container-max-width: #{$container-max-width};
+}

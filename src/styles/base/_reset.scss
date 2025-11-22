@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 *,
 *::before,
 *::after {
@@ -13,13 +16,11 @@ html {
 
 body {
   margin: 0;
-  font-family: $font-primary;
+  font-family: $font-primary, sans-serif;
   font-size: $font-size-base;
   font-weight: $font-weight-regular;
   line-height: $line-height-normal;
   color: $color-text-primary;
-  background-color: $color-bg-primary;
-  @include font-smoothing;
 }
 
 main {
