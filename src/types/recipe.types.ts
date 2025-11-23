@@ -57,6 +57,17 @@ export interface AnalyzedInstruction {
   }[]
 }
 
+export interface RecipeCardData {
+  id: number
+  name: string
+  subname?: string
+  image: string
+  portionSize: string
+  prepTime: string
+  difficulty: string
+  rating: number
+}
+
 export interface RandomRecipesResponse {
   recipes: Recipe[]
 }

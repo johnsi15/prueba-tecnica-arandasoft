@@ -1,16 +1,14 @@
 import Image from 'next/image'
 import styles from './recipe-card.module.scss'
+import type { RecipeCardData } from '@/types/recipe.types'
 
 interface RecipeCardProps {
-  name: string
-  subname: string
-  image: string
-  portionSize: string
-  prepTime: string
-  difficulty: string
+  recipe: RecipeCardData
 }
 
-export function RecipeCard({ name, subname, image, portionSize, prepTime, difficulty }: RecipeCardProps) {
+export function RecipeCard({ recipe }: RecipeCardProps) {
+  const { name, subname, image, portionSize, prepTime, difficulty } = recipe
+
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
