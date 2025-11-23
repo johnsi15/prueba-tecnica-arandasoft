@@ -1,7 +1,10 @@
-export default function PlatosPrincipales() {
+import { RecipeGrid } from '@/components/recipes/recipe-grid'
+import styles from '@/app/page.module.scss'
+
+export default async function PlatosPrincipales() {
   return (
-    <div>
-      <h1>Platos Principales</h1>
+    <div className={styles.pageCategory}>
+      <RecipeGrid title='Platos Principales' tags={['main course']} />
     </div>
   )
 }

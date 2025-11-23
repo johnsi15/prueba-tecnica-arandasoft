@@ -1,11 +1,14 @@
-.vegetarian {
+.page {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  width: 100%;
+
   h1 {
     font-size: 67px;
     color: var(--color-primary);
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-regular);
+    text-align: center;
   }
 }

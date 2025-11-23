@@ -1,7 +1,10 @@
-export default function ComidaRapida() {
+import { RecipeGrid } from '@/components/recipes/recipe-grid'
+import styles from '@/app/page.module.scss'
+
+export default async function ComidaRapida() {
   return (
-    <div>
-      <h1>Comida Rápida</h1>
+    <div className={styles.pageCategory}>
+      <RecipeGrid title='Comida Rápida' tags={['fast food']} />
     </div>
   )
 }
