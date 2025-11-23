@@ -7,7 +7,7 @@ interface RecipeCardProps {
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
-  const { name, subname, image, portionSize, prepTime, difficulty } = recipe
+  const { name, subname, image, portionSize, prepTime, difficulty, rating } = recipe
 
   return (
     <article className={styles.card}>
@@ -36,7 +36,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         <div className={styles.actions}>
           <div className={styles.starContainer}>
             <Image src='/assets/ic_star.svg' alt='Estrella' width={23} height={23} className={styles.icon} />
-            <span className=''>5.0</span>
+            <span>{rating}</span>
           </div>
           <Image src='/assets/ic_heart.svg' alt='Corazón' width={19} height={17} className={styles.icon} />
         </div>

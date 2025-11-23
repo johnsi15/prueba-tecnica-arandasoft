@@ -33,7 +33,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
+  gap: var(--spacing-6xl) var(--spacing-lg);
   margin-top: var(--spacing-3xl);
 
   @include respond-tablet {
@@ -66,4 +66,25 @@
       width: 180px;
     }
   }
+}
+
+.loading {
+  @include flex-center;
+  height: 200px;
+  font-size: var(--font-size-26);
+  color: var(--color-text-secondary);
+}
+
+.error {
+  @include flex-center;
+  height: 200px;
+  font-size: var(--font-size-26);
+  color: var(--color-error);
+}
+
+.noResults {
+  @include flex-center;
+  height: 200px;
+  font-size: var(--font-size-26);
+  color: var(--color-text-secondary);
 }
