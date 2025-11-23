@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Hero />
-      <RecipeGrid number={8} />
+      <RecipeGrid title='Nuevas Recetas' number={8} />
       <Banner />
     </div>
   )

@@ -6,12 +6,13 @@ import { useRecipes } from '@/hooks/use-recipes'
 import type { RecipeCardData } from '@/types/recipe.types'
 
 interface RecipeGridProps {
+  title: string
   initialRecipes?: RecipeCardData[]
   tags?: string[]
   number?: number
 }
 
-export function RecipeGrid({ initialRecipes, tags, number = 10 }: RecipeGridProps) {
+export function RecipeGrid({ title, initialRecipes, tags, number = 10 }: RecipeGridProps) {
   const { recipes, loading, error } = useRecipes({
     autoFetch: !initialRecipes,
     number,
@@ -25,7 +26,7 @@ export function RecipeGrid({ initialRecipes, tags, number = 10 }: RecipeGridProp
 
   return (
     <section className={styles.recipes}>
-      <h2>Nuevas Recetas</h2>
+      <h2>{title}</h2>
       <div className={styles.grid}>
         {displayRecipes.length > 0 ? (
           displayRecipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
