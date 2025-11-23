@@ -9,10 +9,20 @@ export class RecipesService {
       return 'difícil'
     }
 
+    const processTitle = (title: string): { name: string; subname?: string } => {
+      const words = title.split(' ')
+      const name = words[0]
+      const subname = words[1] || ''
+
+      return { name, subname: subname || undefined }
+    }
+
+    const { name, subname } = processTitle(recipe.title)
+
     return {
       id: recipe.id,
-      name: recipe.title.split(' ')[0],
-      subname: recipe.title.split(' ').slice(1).join(' '),
+      name,
+      subname,
       image: recipe.image,
       portionSize: `${recipe.servings} ${recipe.servings === 1 ? 'ración' : 'raciones'}`,
       prepTime: `${recipe.readyInMinutes} minutos`,
