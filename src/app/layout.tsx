@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import localFont from 'next/font/local'
 import '@/styles/globals.scss'
 import { Header } from '@/components/layout/header'
+import { Providers } from '@/app/providers'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -38,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={`${poppins.variable} ${monsterClubhouse.variable}`}>
-        <Header />
-        <main>{children}</main>
+        <Providers>
+          <Header />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   )
