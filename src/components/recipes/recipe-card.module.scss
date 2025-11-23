@@ -2,18 +2,13 @@
 
 .card {
   background: linear-gradient(to top, var(--color-white), var(--color-light-blue));
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.21);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
   height: 270px;
   display: flex;
   flex-direction: column;
-
-  @include respond-tablet {
-    min-width: 280px;
-    flex-shrink: 0;
-  }
 
   &:hover {
     height: auto;
@@ -134,6 +129,36 @@
         &:hover {
           opacity: 0.7;
         }
+      }
+    }
+  }
+
+  @include respond-tablet {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  @include respond-mobile {
+    width: 180px;
+    height: 182px;
+    flex-shrink: 0;
+    .imageContainer {
+      width: 111px;
+      .image {
+        width: 111px;
+        height: 107px;
+      }
+    }
+    .content {
+      height: 120px;
+      .actions {
+        bottom: 5px;
+        .starContainer span {
+          font-size: var(--font-size-lg);
+        }
+      }
+      .name {
+        font-size: var(--font-size-xl);
       }
     }
   }

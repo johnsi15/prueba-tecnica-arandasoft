@@ -5,18 +5,27 @@
   max-width: var(--container-max-width);
   width: 100%;
 
-  @include respond-tablet {
-    padding: 0 var(--spacing-2xl);
-    margin-top: var(--spacing-6xl);
-  }
-
   h2 {
     font-size: 67px;
     color: var(--color-primary);
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-regular);
-    @include respond-tablet {
+  }
+
+  @include respond-tablet {
+    padding: 0 var(--spacing-2xl);
+    margin-top: var(--spacing-6xl);
+    h2 {
       margin-bottom: var(--spacing-3xl);
+    }
+  }
+
+  @include respond-mobile {
+    margin-top: var(--spacing-190);
+    padding: 0 var(--spacing-md);
+    h2 {
+      font-size: var(--font-size-54);
+      text-align: center;
     }
   }
 }
@@ -49,6 +58,12 @@
     > * {
       flex-shrink: 0;
       width: 280px;
+    }
+  }
+
+  @include respond-mobile {
+    > * {
+      width: 180px;
     }
   }
 }

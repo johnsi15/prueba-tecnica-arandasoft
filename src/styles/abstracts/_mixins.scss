@@ -63,3 +63,9 @@
     @content;
   }
 }
+
+@mixin respond-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
