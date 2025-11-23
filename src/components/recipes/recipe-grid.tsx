@@ -2,7 +2,7 @@
 
 import { RecipeCard } from '@/components/recipes/recipe-card'
 import styles from '@/components/recipes/recipe-grid.module.scss'
-import { useRecipes } from '@/hooks/use-recipes'
+import { useRecipesByTypeQuery } from '@/hooks/use-recipes-query'
 import type { RecipeCardData } from '@/types/recipe.types'
 
 interface RecipeGridProps {
@@ -13,16 +13,17 @@ interface RecipeGridProps {
 }
 
 export function RecipeGrid({ title, initialRecipes, tags, number = 10 }: RecipeGridProps) {
-  const { recipes, loading, error } = useRecipes({
-    autoFetch: !initialRecipes,
-    number,
-    tags,
-  })
+  const { data: recipes, isLoading, error } = useRecipesByTypeQuery(tags?.[0] || '', number)
 
-  const displayRecipes = initialRecipes || recipes
+  const displayRecipes = initialRecipes || recipes || []
 
-  if (loading) return <div className={styles.loading}>Cargando recetas...</div>
-  if (error) return <div className={styles.error}>Error: {error}</div>
+  if (!initialRecipes && isLoading) {
+    return <div className={styles.loading}>Cargando recetas...</div>
+  }
+
+  if (!initialRecipes && error) {
+    return <div className={styles.error}>Error: {error.message}</div>
+  }
 
   return (
     <section className={styles.recipes}>
