@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import '@/styles/globals.scss'
 import { Header } from '@/components/layout/header'
 import { Providers } from '@/app/providers'
+import { SITE_CONFIG, META_DEFAULT, OPEN_GRAPH, TWITTER } from '@/lib/metadata'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -27,8 +28,11 @@ const monsterClubhouse = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'RecipeApp - Recetas para todos',
-  description: 'Descubre las mejores recetas de cocina',
+  ...META_DEFAULT,
+  title: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
+  openGraph: OPEN_GRAPH,
+  twitter: TWITTER,
 }
 
 export default function RootLayout({
