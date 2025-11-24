@@ -6,7 +6,8 @@ import styles from '@/app/page.module.scss'
 
 export const metadata: Metadata = {
   title: `Recetas para Menú Niños - ${SITE_CONFIG.name}`,
-  description: 'Descubre deliciosas recetas para menú niños, saludables y divertidas. Platos fáciles que los pequeños adorarán.',
+  description:
+    'Descubre deliciosas recetas para menú niños, saludables y divertidas. Platos fáciles que los pequeños adorarán.',
   keywords: ['Menú Niños', 'Recetas para Niños', 'Platos Infantiles'],
   openGraph: {
     title: `Recetas para Menú Niños - ${SITE_CONFIG.name}`,
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 }
 
 export default async function MenuNinos() {
-  const category = 'kids'
+  const category = 'fingerfood'
   const limit = 12
   const initialRecipes = await RecipesService.getRandomRecipes(limit, [category])
 
