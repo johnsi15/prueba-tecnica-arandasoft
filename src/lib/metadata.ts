@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   title: 'Recetas - Explora deliciosas recetas de cocina',
   description:
     'Descubre una variedad de recetas deliciosas por categorías: comida rápida, vegetarianos, sopas, platos principales, tortas y menú niños. Integrada con Spoonacular API para una experiencia culinaria única.',
-  url: 'https://recetas-app.com',
+  url: 'https://recetas-para-todos.vercel.app',
   ogImage: '/og-image.png',
 }
 
