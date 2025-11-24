@@ -1,15 +1,8 @@
-@mixin container($max-width: $container-max-width) {
+@mixin container($max-width: var(--container-max-width)) {
   width: 100%;
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $container-padding-mobile;
-  padding-right: $container-padding-mobile;
-
-  @include respond-above('md') {
-    padding-left: $container-padding;
-    padding-right: $container-padding;
-  }
 }
 
 @mixin flex-center {
@@ -28,34 +21,10 @@
   justify-content: space-between;
 }
 
-@mixin grid($columns: 3, $gap: $grid-gap) {
-  display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-  gap: $gap;
-}
-
-@mixin grid-auto-fit($min-width: 250px, $gap: $grid-gap) {
+@mixin grid-auto-fit($min-width: 250px, $row-gap: $grid-gap, $col-gap: $grid-gap) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
-  gap: $gap;
-}
-
-@mixin grid-auto-fill($min-width: 250px, $gap: $grid-gap) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
-  gap: $gap;
-}
-
-@mixin sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  gap: $row-gap $col-gap;
 }
 
 @mixin respond-tablet {
