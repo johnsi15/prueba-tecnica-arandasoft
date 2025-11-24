@@ -25,7 +25,7 @@
       visibility: hidden;
     }
 
-    .actions {
+    .actions .starContainer {
       opacity: 0;
       visibility: hidden;
     }
@@ -66,7 +66,9 @@
 
       white-space: nowrap;
       text-overflow: ellipsis;
+      overflow: hidden;
       max-width: 260px;
+      min-height: 36px;
 
       span {
         font-weight: var(--font-weight-regular);
@@ -76,7 +78,8 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        max-width: 130px;
+        max-width: 100px;
+        padding: 0 2px;
       }
     }
 
@@ -137,6 +140,23 @@
         }
       }
     }
+  }
+
+  .favoriteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .favoriteActive {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%)
+      contrast(97%);
+  }
+
+  .favoriteInactive {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(96%)
+      contrast(89%);
   }
 
   @include respond-tablet {
