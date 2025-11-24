@@ -29,6 +29,7 @@ const monsterClubhouse = localFont({
 
 export const metadata: Metadata = {
   ...META_DEFAULT,
+  metadataBase: new URL(SITE_CONFIG.url),
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
   openGraph: OPEN_GRAPH,
