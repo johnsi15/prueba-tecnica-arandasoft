@@ -1,6 +1,6 @@
 import { ApiError, getHttpErrorMessage, handleApiError } from '@/utils/api-error'
 
-const API_KEY = process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY
+const API_KEY = process.env.SPOONACULAR_API_KEY
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://api.spoonacular.com'
 
 interface HttpClientOptions {
