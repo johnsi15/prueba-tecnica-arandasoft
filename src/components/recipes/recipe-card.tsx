@@ -1,12 +1,15 @@
 import Image from 'next/image'
-import styles from './recipe-card.module.scss'
+import { useFavorites } from '@/hooks/use-favorites'
 import type { RecipeCardData } from '@/types/recipe.types'
+import styles from './recipe-card.module.scss'
 
 interface RecipeCardProps {
   recipe: RecipeCardData
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
+  const { isFavorite, handleToggle } = useFavorites()
+
   const { name, subname, image, portionSize, prepTime, difficulty, rating } = recipe
 
   return (
@@ -38,7 +41,15 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             <Image src='/assets/ic_star.svg' alt='Estrella' width={23} height={23} className={styles.icon} />
             <span>{rating}</span>
           </div>
-          <Image src='/assets/ic_heart.svg' alt='Corazón' width={19} height={17} className={styles.icon} />
+          <button onClick={() => handleToggle(recipe.id)} className={styles.favoriteButton}>
+            <Image
+              src='/assets/ic_heart.svg'
+              alt='Favorito'
+              width={19}
+              height={17}
+              className={`${styles.icon} ${isFavorite(recipe.id) ? styles.favoriteActive : styles.favoriteInactive}`}
+            />
+          </button>
         </div>
       </div>
     </article>
