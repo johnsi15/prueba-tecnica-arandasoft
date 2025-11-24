@@ -61,5 +61,3 @@ export class RecipesService {
     return response.results.map(this.mapToCardData)
   }
 }
-
-export const recipeService = RecipesService
