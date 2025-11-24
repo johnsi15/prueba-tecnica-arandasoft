@@ -35,7 +35,7 @@ export class RecipesService {
     const params: Record<string, string | number> = { number }
 
     if (tags && tags.length > 0) {
-      params.tags = tags.join(',')
+      params['include-tags'] = tags.join(',')
     }
 
     const response = await httpClient<RandomRecipesResponse>('/recipes/random', params, { revalidate: 3600 })
@@ -59,10 +59,6 @@ export class RecipesService {
     })
 
     return response.results.map(this.mapToCardData)
-  }
-
-  static async getRecipesByType(type: string, number = 10): Promise<RecipeCardData[]> {
-    return await this.getRandomRecipes(number, [type])
   }
 }
 
