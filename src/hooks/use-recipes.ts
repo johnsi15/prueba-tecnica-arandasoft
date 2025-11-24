@@ -48,17 +48,17 @@ export const useRecipes = (options: UseRecipesOptions = {}) => {
     }
   }
 
-  const fetchRecipesByType = async (type: string, typeNumber?: number) => {
-    setState(prev => ({ ...prev, loading: true, error: null }))
+  // const fetchRecipesByType = async (type: string, typeNumber?: number) => {
+  //   setState(prev => ({ ...prev, loading: true, error: null }))
 
-    try {
-      const recipes = await RecipesService.getRecipesByType(type, typeNumber ?? number)
-      setState({ recipes, loading: false, error: null })
-    } catch (error) {
-      const errorMessage = handleApiError(error)
-      setState({ recipes: [], loading: false, error: errorMessage })
-    }
-  }
+  //   try {
+  //     const recipes = await RecipesService.getRecipesByType(type, typeNumber ?? number)
+  //     setState({ recipes, loading: false, error: null })
+  //   } catch (error) {
+  //     const errorMessage = handleApiError(error)
+  //     setState({ recipes: [], loading: false, error: errorMessage })
+  //   }
+  // }
 
   const reset = () => {
     setState({ recipes: [], loading: false, error: null })
@@ -77,7 +77,7 @@ export const useRecipes = (options: UseRecipesOptions = {}) => {
     error: state.error,
     fetchRecipes,
     searchRecipes,
-    fetchRecipesByType,
+    // fetchRecipesByType,
     reset,
   }
 }
