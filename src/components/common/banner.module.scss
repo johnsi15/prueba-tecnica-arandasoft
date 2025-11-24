@@ -1,8 +1,9 @@
 @use '../../styles/abstracts/mixins' as *;
 
 .banner {
-  background: transparent linear-gradient(180deg, #c2e3f3 0%, #6aa3c1 100%) 0% 0% no-repeat padding-box;
-  box-shadow: 4px 6px 23px #a9a9a911;
+  background: transparent linear-gradient(180deg, var(--color-blue-light) 0%, var(--color-blue-dark) 100%) 0% 0%
+    no-repeat padding-box;
+  box-shadow: 4px 6px 23px var(--color-shadow);
   height: 167px;
   margin: var(--spacing-7xl) 0;
   width: 100%;

@@ -1,16 +1,14 @@
 @use '../styles/abstracts/mixins' as *;
 
 .page {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   min-height: 100vh;
   margin: 0 auto;
   padding-bottom: 200px;
 }
 
 .pageCategory {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
+  @include container;
   padding: var(--spacing-3xl) 0;
   h1 {
     font-size: 67px;

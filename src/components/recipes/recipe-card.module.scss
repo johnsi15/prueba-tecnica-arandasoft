@@ -7,8 +7,7 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
   height: 270px;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 
   &:hover {
     height: auto;
@@ -50,8 +49,7 @@
   .content {
     padding: var(--spacing-md);
     margin-top: -50px;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     position: relative;
     height: 150px;

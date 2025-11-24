@@ -154,27 +154,6 @@ th {
   text-align: inherit;
 }
 
-.sr-only {
-  @include sr-only;
-}
-
-.skip-to-main {
-  @include sr-only;
-
-  &:focus {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    padding: $spacing-md;
-    background: $color-primary;
-    color: $color-white;
-    z-index: $z-index-tooltip;
-    clip: auto;
-  }
-}
-
 .d-none {
   display: none !important;
 }
@@ -189,10 +168,6 @@ th {
 
 .d-grid {
   display: grid !important;
-}
-
-.visually-hidden {
-  @include sr-only;
 }
 
 .text-left {

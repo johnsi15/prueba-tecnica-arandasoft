@@ -1,9 +1,8 @@
 @use '../../styles/abstracts/mixins' as *;
 
 .recipes {
-  margin: 28px auto 0;
-  max-width: var(--container-max-width);
-  width: 100%;
+  @include container;
+  margin-top: 28px;
 
   h2 {
     font-size: 67px;
@@ -28,9 +27,7 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-6xl) var(--spacing-lg);
+  @include grid-auto-fit(250px, var(--spacing-6xl), var(--spacing-lg));
   margin-top: var(--spacing-3xl);
 
   .noResults {
@@ -90,7 +87,7 @@
     margin-top: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     background: var(--color-primary);
-    color: white;
+    color: var(--color-white);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
