@@ -14,18 +14,15 @@
 
   @include respond-tablet {
     padding: 0 var(--spacing-2xl);
-    margin-top: var(--spacing-6xl);
     h2 {
       margin-bottom: var(--spacing-3xl);
     }
   }
 
   @include respond-mobile {
-    margin-top: var(--spacing-190);
     padding: 0 var(--spacing-md);
     h2 {
       font-size: var(--font-size-54);
-      text-align: center;
     }
   }
 }
@@ -41,6 +38,7 @@
     height: 200px;
     font-size: var(--font-size-26);
     color: var(--color-text-secondary);
+    width: 100%;
   }
 
   @include respond-tablet {
