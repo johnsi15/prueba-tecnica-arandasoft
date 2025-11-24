@@ -59,12 +59,17 @@
     padding: 0 var(--spacing-md);
 
     p {
-      font-size: var(--font-size-2xl);
+      font-size: var(--font-size-23);
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 300px;
     }
 
     img {
       top: -5px;
       right: -10px;
+      overflow: hidden;
       width: 228px;
     }
   }
