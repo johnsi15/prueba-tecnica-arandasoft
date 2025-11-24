@@ -20,12 +20,3 @@ export const useRecipesQuery = (options: UseRecipesQueryOptions = {}) => {
     gcTime: 30 * 60 * 1000, // 30 minutos
   })
 }
-
-export const useSearchRecipesQuery = (query: string, number = 10, enabled = false) => {
-  return useQuery({
-    queryKey: ['recipes', 'search', query, number],
-    queryFn: () => RecipesService.searchRecipes(query, number),
-    enabled: enabled && query.length > 0,
-    staleTime: 2 * 60 * 1000, // 2 minutos
-  })
-}

@@ -42,22 +42,4 @@ export class RecipesService {
 
     return response.recipes.map(this.mapToCardData)
   }
-
-  static async getRecipeById(id: number): Promise<Recipe> {
-    return await httpClient<Recipe>(
-      `/recipes/${id}/information`,
-      {},
-      { revalidate: 86400 } // 24 horas
-    )
-  }
-
-  static async searchRecipes(query: string, number = 10): Promise<RecipeCardData[]> {
-    const response = await httpClient<{ results: Recipe[] }>('/recipes/complexSearch', {
-      query,
-      number,
-      addRecipeInformation: true,
-    })
-
-    return response.results.map(this.mapToCardData)
-  }
 }
