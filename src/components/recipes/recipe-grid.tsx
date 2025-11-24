@@ -2,7 +2,7 @@
 
 import { RecipeCard } from '@/components/recipes/recipe-card'
 import styles from '@/components/recipes/recipe-grid.module.scss'
-import { useRecipesByTypeQuery } from '@/hooks/use-recipes-query'
+import { useRecipesQuery } from '@/hooks/use-recipes-query'
 import type { RecipeCardData } from '@/types/recipe.types'
 
 interface RecipeGridProps {
@@ -13,16 +13,23 @@ interface RecipeGridProps {
 }
 
 export function RecipeGrid({ title, initialRecipes, tags, number = 10 }: RecipeGridProps) {
-  const { data: recipes, isLoading, error } = useRecipesByTypeQuery(tags?.[0] || '', number)
+  const { data: recipes, isLoading, error, refetch } = useRecipesQuery({ number, tags, initialData: initialRecipes })
 
-  const displayRecipes = initialRecipes || recipes || []
+  const displayRecipes = recipes || []
 
   if (!initialRecipes && isLoading) {
     return <div className={styles.loading}>Cargando recetas...</div>
   }
 
   if (!initialRecipes && error) {
-    return <div className={styles.error}>Error: {error.message}</div>
+    return (
+      <div className={styles.error}>
+        <p>Hubo un problema al cargar las recetas. Intenta de nuevo.</p>
+        <button onClick={() => refetch()} className={styles.retryButton}>
+          Reintentar
+        </button>
+      </div>
+    )
   }
 
   return (

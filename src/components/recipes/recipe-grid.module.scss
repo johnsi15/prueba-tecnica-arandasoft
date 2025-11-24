@@ -87,4 +87,18 @@
   height: 200px;
   font-size: var(--font-size-26);
   color: var(--color-error);
+
+  .retryButton {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--color-primary-dark);
+    }
+  }
 }
